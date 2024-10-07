@@ -32,3 +32,4 @@ resource "azurerm_storage_container" "gold"{
   storage_account_name = azurerm_storage_account.lakehouse.name
   container_access_type = "private"
 }
+

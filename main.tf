@@ -16,6 +16,7 @@ provider "azurerm"{
     client_secret = var.client_secret
 }
 
+
 # Retrive current azure tenant configs
 data "azurerm_client_config" "current" {}
 
@@ -25,14 +26,16 @@ resource "azurerm_resource_group" "this"{
     location = var.az_location
 }
 
-# module "lakehouse" {
-#   source = "./modules/lakehouse"
-#   resource_group_name = azurerm_resource_group.this.name
-#   az_location = azurerm_resource_group.this.location
-# }
+module "lakehouse" {
+  source = "./modules/lakehouse"
+  resource_group_name = azurerm_resource_group.this.name
+  az_location = azurerm_resource_group.this.location
+}
 
 module "databricks" {
   source = "./modules/databricks"
   resource_group_name = azurerm_resource_group.this.name
   az_location = azurerm_resource_group.this.location
+  db_ws_sp_token = var.db_ws_sp_token
+  account_id = var.account_id
 }
