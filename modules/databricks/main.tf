@@ -36,6 +36,6 @@ provider "databricks" {
   account_id = var.account_id
 }
 
-data "databricks_metastores" "this" {
-    provider      = databricks.account
-}
+# data "databricks_metastores" "this" {
+#     provider      = databricks.account
+# }
