@@ -14,4 +14,4 @@ variable "rg_name" { default = "data-analytics-portfolio-project-rg" }
 # Databricks Variables
 variable "db_ws_sp_token" { default = "dapi2984244a0de8b823722538385a3f0090" }
 variable "account_id" { default = "15365ebb-5d28-41bf-981f-d8ea3a86e8bd" }
-# Manual step - Add terraform sp as account admin in datarbicks account console. 
+# Manual step - Provide account admin role to terraform sp in datarbicks account console. 
