@@ -10,3 +10,4 @@ module "adb-lakehouse-uc-metastore" {
     databricks = databricks.account
   }
 }
+

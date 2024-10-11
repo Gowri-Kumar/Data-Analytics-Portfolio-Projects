@@ -1,5 +1,6 @@
 Pre-requsite steps
 - Ensure no metastore is installed for the region - https://accounts.azuredatabricks.net/
+- # With UC by default we need to explicitly create a UC metastore, otherwise it will be created automatically
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 Ref link - https://github.com/databricks/terraform-databricks-examples/tree/main/modules/adb-uc-metastore 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
