@@ -1,13 +1,13 @@
-resource "azurerm_resource_group" "shared_resource_group" {
-  name     = var.shared_resource_group_name
+resource "azurerm_resource_group" "metastore_resource_group" {
+  name     = var.metastore_resource_group_name
   location = var.location
   tags     = var.tags
 }
 
 resource "azurerm_databricks_access_connector" "access_connector" {
   name                = var.access_connector_name
-  resource_group_name = azurerm_resource_group.shared_resource_group.name
-  location            = azurerm_resource_group.shared_resource_group.location
+  resource_group_name = azurerm_resource_group.metastore_resource_group.name
+  location            = azurerm_resource_group.metastore_resource_group.location
   identity {
     type = "SystemAssigned"
   }
@@ -15,8 +15,8 @@ resource "azurerm_databricks_access_connector" "access_connector" {
 
 resource "azurerm_storage_account" "unity_catalog" {
   name                     = var.metastore_storage_name
-  location                 = azurerm_resource_group.shared_resource_group.location
-  resource_group_name      = var.shared_resource_group_name
+  location                 = azurerm_resource_group.metastore_resource_group.location
+  resource_group_name      = var.metastore_resource_group_name
   tags                     = var.tags
   account_tier             = "Standard"
   account_replication_type = "GRS"

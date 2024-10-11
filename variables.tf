@@ -22,9 +22,9 @@ variable "tags" {
   default     = {}
 }
 
-variable "shared_resource_group_name" {
+variable "metastore_resource_group_name" {
   type        = string
-  description = "Name of the shared resource group"
+  description = "Name of the metastore resource group"
 }
 
 variable "metastore_name" {

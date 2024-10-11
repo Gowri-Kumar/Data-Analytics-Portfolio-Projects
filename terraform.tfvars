@@ -4,6 +4,6 @@ account_id                 = "15365ebb-5d28-41bf-981f-d8ea3a86e8bd"
 metastore_storage_name     = "ucmetastore0101010"
 metastore_name             = "uc-metastore"
 access_connector_name      = "uc-metastore-access-connector"
-shared_resource_group_name = "data-project-rg"
+metastore_resource_group_name = "adb-uc-metastore-rg"
 location                   = "australiasoutheast"
 tags                       = {"project name" = "data project"}
