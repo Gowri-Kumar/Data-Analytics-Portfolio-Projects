@@ -1,0 +1,34 @@
+.terraform
+*~
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.
+*.terraform.lock.hcl
+
+# logs
+*.log
+
+# Directories
+.terraform/
+*.terraform/
+.vagrant/
+
+# SSH Keys
+*.pem
+
+# Backup files
+*.bak
+
+# Ignored Terraform files
+*gitignore*.tf
+
+# Ignore Mac .DS_Store files
+.DS_Store
+
+# Ignored vscode files
+.vscode/
+.devcontainer/devcontainer.json
+
+.idea/
