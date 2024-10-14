@@ -12,6 +12,7 @@ module "adb-lakehouse-uc-metastore" {
   }
 }
 
+#this will create lakehouse platform elements - databricks ws within vnet, azure storage objects, data factory instance and key vault
 module "adb-lakehouse" {
   depends_on                          = [module.adb-lakehouse-uc-metastore]
   source                              = "./modules/adb-lakehouse"
@@ -26,6 +27,14 @@ module "adb-lakehouse" {
   key_vault_name                      = var.key_vault_name
   private_subnet_address_prefixes     = var.private_subnet_address_prefixes
   public_subnet_address_prefixes      = var.public_subnet_address_prefixes
-  storage_account_names               = var.storage_account_names
+  storage_account_name               = var.storage_account_name
   tags                                = var.tags
+}
+
+#this will assign uc to a specific workspace
+module "adb-ws-uc-assignment" {
+  depends_on          = [ module.adb-lakehouse ]
+  source              = "./modules/adb-ws-uc-assignment"
+  workspace_id        = module.adb-lakehouse.workspace_id
+  metastore_id        = module.adb-lakehouse-uc-metastore.metastore_id
 }

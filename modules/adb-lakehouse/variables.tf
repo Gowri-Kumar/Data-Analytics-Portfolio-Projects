@@ -61,8 +61,8 @@ variable "public_subnet_address_prefixes" {
   description = "Address space for public Databricks subnet"
 }
 
-variable "storage_account_names" {
-  type        = list(string)
+variable "storage_account_name" {
+  type        = string
   description = "Names of additional storage accounts to create"
-  default     = []
+  default     = ""
 }

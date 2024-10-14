@@ -95,8 +95,20 @@ variable "public_subnet_address_prefixes" {
   description = "Address space for public Databricks subnet"
 }
 
-variable "storage_account_names" {
-  type        = list(string)
+variable "storage_account_name" {
+  type        = string
   description = "Names of additional storage accounts to create"
-  default     = []
+  default     = ""
+}
+
+variable "metastore_id" {
+  type        = string
+  description = "The ID of Unity Catalog metastore"
+  default     = ""
+}
+
+variable "workspace_id" {
+  type        = string
+  description = "The ID of Databricks workspace"
+  default     = ""
 }
