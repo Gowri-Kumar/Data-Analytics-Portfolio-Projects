@@ -8,3 +8,27 @@ resource "azurerm_storage_account" "dls" {
   tags                     = var.tags
   is_hns_enabled           = true
 }
+
+resource "azurerm_storage_container" "landing" {
+  name                  = "landing"
+  storage_account_name  = azurerm_storage_account.dls[0].name
+  container_access_type = "private"
+}
+
+resource "azurerm_storage_container" "bronze" {
+  name                  = "bronze"
+  storage_account_name  = azurerm_storage_account.dls[0].name
+  container_access_type = "private"
+}
+
+resource "azurerm_storage_container" "silver" {
+  name                  = "silver"
+  storage_account_name  = azurerm_storage_account.dls[0].name
+  container_access_type = "private"
+}
+
+resource "azurerm_storage_container" "gold" {
+  name                  = "gold"
+  storage_account_name  = azurerm_storage_account.dls[0].name
+  container_access_type = "private"
+}
