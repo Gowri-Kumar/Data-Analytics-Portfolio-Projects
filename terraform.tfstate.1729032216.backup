@@ -1,117 +1,10 @@
 {
   "version": 4,
   "terraform_version": "1.9.7",
-  "serial": 69,
-  "lineage": "7b6801f1-5d4b-5399-b5cc-3fa4a59aa761",
+  "serial": 282,
+  "lineage": "97960403-0249-f40e-8485-895e0d65fa11",
   "outputs": {},
   "resources": [
-    {
-      "mode": "data",
-      "type": "azurerm_client_config",
-      "name": "current",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "client_id": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
-            "id": "Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9YjU3YzUzODQtNGRjNi00MzkxLTllZDMtNGYzY2I1Yzc2OGMxO3N1YnNjcmlwdGlvbklkPWY1ZGI4ZDEyLWViY2UtNGU3ZC1iNjJjLTZlMTQ5YzYyNzQ5Yjt0ZW5hbnRJZD04MTgzNTcyNi02ZTllLTQ3NzAtOGJiNi02YzI5MmYyZmVmM2Q=",
-            "object_id": "b57c5384-4dc6-4391-9ed3-4f3cb5c768c1",
-            "subscription_id": "f5db8d12-ebce-4e7d-b62c-6e149c62749b",
-            "tenant_id": "81835726-6e9e-4770-8bb6-6c292f2fef3d",
-            "timeouts": null
-          },
-          "sensitive_attributes": []
-        }
-      ]
-    },
-    {
-      "module": "module.adb-lakehouse",
-      "mode": "data",
-      "type": "azurerm_client_config",
-      "name": "current",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "client_id": "04b07795-8ddb-461a-bbee-02f9e1bf7b46",
-            "id": "Y2xpZW50Q29uZmlncy9jbGllbnRJZD0wNGIwNzc5NS04ZGRiLTQ2MWEtYmJlZS0wMmY5ZTFiZjdiNDY7b2JqZWN0SWQ9YjU3YzUzODQtNGRjNi00MzkxLTllZDMtNGYzY2I1Yzc2OGMxO3N1YnNjcmlwdGlvbklkPWY1ZGI4ZDEyLWViY2UtNGU3ZC1iNjJjLTZlMTQ5YzYyNzQ5Yjt0ZW5hbnRJZD04MTgzNTcyNi02ZTllLTQ3NzAtOGJiNi02YzI5MmYyZmVmM2Q=",
-            "object_id": "b57c5384-4dc6-4391-9ed3-4f3cb5c768c1",
-            "subscription_id": "f5db8d12-ebce-4e7d-b62c-6e149c62749b",
-            "tenant_id": "81835726-6e9e-4770-8bb6-6c292f2fef3d",
-            "timeouts": null
-          },
-          "sensitive_attributes": []
-        }
-      ]
-    },
-    {
-      "module": "module.adb-lakehouse",
-      "mode": "data",
-      "type": "azurerm_resource_group",
-      "name": "this",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg",
-            "location": "australiasoutheast",
-            "managed_by": "",
-            "name": "adb-lakehouse-rg",
-            "tags": {
-              "project name": "data project"
-            },
-            "timeouts": null
-          },
-          "sensitive_attributes": []
-        }
-      ]
-    },
-    {
-      "module": "module.adb-lakehouse",
-      "mode": "managed",
-      "type": "azurerm_data_factory",
-      "name": "adf",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 2,
-          "attributes": {
-            "customer_managed_key_id": "",
-            "customer_managed_key_identity_id": "",
-            "github_configuration": [],
-            "global_parameter": [],
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.DataFactory/factories/data-project-adf-instance",
-            "identity": [],
-            "location": "australiasoutheast",
-            "managed_virtual_network_enabled": false,
-            "name": "data-project-adf-instance",
-            "public_network_enabled": true,
-            "purview_id": "",
-            "resource_group_name": "adb-lakehouse-rg",
-            "tags": {
-              "project name": "data project"
-            },
-            "timeouts": null,
-            "vsts_configuration": []
-          },
-          "sensitive_attributes": [],
-          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIyIn0=",
-          "dependencies": [
-            "module.adb-lakehouse-uc-metastore.azurerm_databricks_access_connector.access_connector",
-            "module.adb-lakehouse-uc-metastore.azurerm_resource_group.metastore_resource_group",
-            "module.adb-lakehouse-uc-metastore.azurerm_role_assignment.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_account.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
-          ]
-        }
-      ]
-    },
     {
       "module": "module.adb-lakehouse",
       "mode": "managed",
@@ -164,8 +57,8 @@
               "project name": "data project"
             },
             "timeouts": null,
-            "workspace_id": "3472069705030425",
-            "workspace_url": "adb-3472069705030425.5.azuredatabricks.net"
+            "workspace_id": "3249793842391141",
+            "workspace_url": "adb-3249793842391141.1.azuredatabricks.net"
           },
           "sensitive_attributes": [],
           "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
@@ -178,67 +71,12 @@
             "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
             "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
             "module.adb-lakehouse.azurerm_network_security_group.this",
+            "module.adb-lakehouse.azurerm_resource_group.this",
             "module.adb-lakehouse.azurerm_subnet.private",
             "module.adb-lakehouse.azurerm_subnet.public",
             "module.adb-lakehouse.azurerm_subnet_network_security_group_association.private",
             "module.adb-lakehouse.azurerm_subnet_network_security_group_association.public",
-            "module.adb-lakehouse.azurerm_virtual_network.this",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.adb-lakehouse",
-      "mode": "managed",
-      "type": "azurerm_key_vault",
-      "name": "example",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 2,
-          "attributes": {
-            "access_policy": [],
-            "contact": [],
-            "enable_rbac_authorization": false,
-            "enabled_for_deployment": false,
-            "enabled_for_disk_encryption": true,
-            "enabled_for_template_deployment": false,
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.KeyVault/vaults/data-project-kv",
-            "location": "australiasoutheast",
-            "name": "data-project-kv",
-            "network_acls": [
-              {
-                "bypass": "AzureServices",
-                "default_action": "Allow",
-                "ip_rules": [],
-                "virtual_network_subnet_ids": []
-              }
-            ],
-            "public_network_access_enabled": true,
-            "purge_protection_enabled": false,
-            "resource_group_name": "adb-lakehouse-rg",
-            "sku_name": "standard",
-            "soft_delete_retention_days": 7,
-            "tags": {
-              "project name": "data project"
-            },
-            "tenant_id": "81835726-6e9e-4770-8bb6-6c292f2fef3d",
-            "timeouts": null,
-            "vault_uri": "https://data-project-kv.vault.azure.net/"
-          },
-          "sensitive_attributes": [],
-          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIyIn0=",
-          "dependencies": [
-            "module.adb-lakehouse-uc-metastore.azurerm_databricks_access_connector.access_connector",
-            "module.adb-lakehouse-uc-metastore.azurerm_resource_group.metastore_resource_group",
-            "module.adb-lakehouse-uc-metastore.azurerm_role_assignment.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_account.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.data.azurerm_client_config.current",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
+            "module.adb-lakehouse.azurerm_virtual_network.this"
           ]
         }
       ]
@@ -257,7 +95,116 @@
             "location": "australiasoutheast",
             "name": "databricks-nsg-data-analytics-portfolio-project-dev",
             "resource_group_name": "adb-lakehouse-rg",
-            "security_rule": [],
+            "security_rule": [
+              {
+                "access": "Allow",
+                "description": "Required for worker communication with Azure Eventhub services.",
+                "destination_address_prefix": "EventHub",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "9093",
+                "destination_port_ranges": [],
+                "direction": "Outbound",
+                "name": "Microsoft.Databricks-workspaces_UseOnly_databricks-worker-to-eventhub",
+                "priority": 104,
+                "protocol": "Tcp",
+                "source_address_prefix": "VirtualNetwork",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "Required for worker nodes communication within a cluster.",
+                "destination_address_prefix": "VirtualNetwork",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "*",
+                "destination_port_ranges": [],
+                "direction": "Inbound",
+                "name": "Microsoft.Databricks-workspaces_UseOnly_databricks-worker-to-worker-inbound",
+                "priority": 100,
+                "protocol": "*",
+                "source_address_prefix": "VirtualNetwork",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "Required for worker nodes communication within a cluster.",
+                "destination_address_prefix": "VirtualNetwork",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "*",
+                "destination_port_ranges": [],
+                "direction": "Outbound",
+                "name": "Microsoft.Databricks-workspaces_UseOnly_databricks-worker-to-worker-outbound",
+                "priority": 100,
+                "protocol": "*",
+                "source_address_prefix": "VirtualNetwork",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "Required for workers communication with Azure SQL services.",
+                "destination_address_prefix": "Sql",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "3306",
+                "destination_port_ranges": [],
+                "direction": "Outbound",
+                "name": "Microsoft.Databricks-workspaces_UseOnly_databricks-worker-to-sql",
+                "priority": 102,
+                "protocol": "Tcp",
+                "source_address_prefix": "VirtualNetwork",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "Required for workers communication with Azure Storage services.",
+                "destination_address_prefix": "Storage",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "443",
+                "destination_port_ranges": [],
+                "direction": "Outbound",
+                "name": "Microsoft.Databricks-workspaces_UseOnly_databricks-worker-to-storage",
+                "priority": 103,
+                "protocol": "Tcp",
+                "source_address_prefix": "VirtualNetwork",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              },
+              {
+                "access": "Allow",
+                "description": "Required for workers communication with Databricks control plane.",
+                "destination_address_prefix": "AzureDatabricks",
+                "destination_address_prefixes": [],
+                "destination_application_security_group_ids": [],
+                "destination_port_range": "443",
+                "destination_port_ranges": [],
+                "direction": "Outbound",
+                "name": "Microsoft.Databricks-workspaces_UseOnly_databricks-worker-to-databricks-cp",
+                "priority": 101,
+                "protocol": "Tcp",
+                "source_address_prefix": "VirtualNetwork",
+                "source_address_prefixes": [],
+                "source_application_security_group_ids": [],
+                "source_port_range": "*",
+                "source_port_ranges": []
+              }
+            ],
             "tags": {
               "project name": "data project"
             },
@@ -273,7 +220,7 @@
             "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
             "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
             "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
+            "module.adb-lakehouse.azurerm_resource_group.this"
           ]
         }
       ]
@@ -314,43 +261,6 @@
     {
       "module": "module.adb-lakehouse",
       "mode": "managed",
-      "type": "azurerm_route_table",
-      "name": "this",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "bgp_route_propagation_enabled": true,
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/routeTables/route-table-data-analytics-portfolio-project-dev",
-            "location": "australiasoutheast",
-            "name": "route-table-data-analytics-portfolio-project-dev",
-            "resource_group_name": "adb-lakehouse-rg",
-            "route": [],
-            "subnets": [],
-            "tags": {
-              "project name": "data project"
-            },
-            "timeouts": null
-          },
-          "sensitive_attributes": [],
-          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMCwidXBkYXRlIjoxODAwMDAwMDAwMDAwfX0=",
-          "dependencies": [
-            "module.adb-lakehouse-uc-metastore.azurerm_databricks_access_connector.access_connector",
-            "module.adb-lakehouse-uc-metastore.azurerm_resource_group.metastore_resource_group",
-            "module.adb-lakehouse-uc-metastore.azurerm_role_assignment.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_account.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.adb-lakehouse",
-      "mode": "managed",
       "type": "azurerm_subnet",
       "name": "private",
       "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
@@ -382,8 +292,8 @@
             "private_endpoint_network_policies": "Disabled",
             "private_link_service_network_policies_enabled": true,
             "resource_group_name": "adb-lakehouse-rg",
-            "service_endpoint_policy_ids": null,
-            "service_endpoints": null,
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
             "timeouts": null,
             "virtual_network_name": "VNET-data-analytics-portfolio-project-dev"
           },
@@ -397,8 +307,8 @@
             "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
             "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
             "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.azurerm_virtual_network.this",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
+            "module.adb-lakehouse.azurerm_resource_group.this",
+            "module.adb-lakehouse.azurerm_virtual_network.this"
           ]
         }
       ]
@@ -437,8 +347,8 @@
             "private_endpoint_network_policies": "Disabled",
             "private_link_service_network_policies_enabled": true,
             "resource_group_name": "adb-lakehouse-rg",
-            "service_endpoint_policy_ids": null,
-            "service_endpoints": null,
+            "service_endpoint_policy_ids": [],
+            "service_endpoints": [],
             "timeouts": null,
             "virtual_network_name": "VNET-data-analytics-portfolio-project-dev"
           },
@@ -452,8 +362,8 @@
             "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
             "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
             "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.azurerm_virtual_network.this",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
+            "module.adb-lakehouse.azurerm_resource_group.this",
+            "module.adb-lakehouse.azurerm_virtual_network.this"
           ]
         }
       ]
@@ -484,9 +394,9 @@
             "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
             "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
             "module.adb-lakehouse.azurerm_network_security_group.this",
+            "module.adb-lakehouse.azurerm_resource_group.this",
             "module.adb-lakehouse.azurerm_subnet.private",
-            "module.adb-lakehouse.azurerm_virtual_network.this",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
+            "module.adb-lakehouse.azurerm_virtual_network.this"
           ]
         }
       ]
@@ -517,75 +427,9 @@
             "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
             "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
             "module.adb-lakehouse.azurerm_network_security_group.this",
+            "module.adb-lakehouse.azurerm_resource_group.this",
             "module.adb-lakehouse.azurerm_subnet.public",
-            "module.adb-lakehouse.azurerm_virtual_network.this",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.adb-lakehouse",
-      "mode": "managed",
-      "type": "azurerm_subnet_route_table_association",
-      "name": "private",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/virtualNetworks/VNET-data-analytics-portfolio-project-dev/subnets/private-subnet-databricks-ws",
-            "route_table_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/routeTables/route-table-data-analytics-portfolio-project-dev",
-            "subnet_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/virtualNetworks/VNET-data-analytics-portfolio-project-dev/subnets/private-subnet-databricks-ws",
-            "timeouts": null
-          },
-          "sensitive_attributes": [],
-          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMH19",
-          "dependencies": [
-            "module.adb-lakehouse-uc-metastore.azurerm_databricks_access_connector.access_connector",
-            "module.adb-lakehouse-uc-metastore.azurerm_resource_group.metastore_resource_group",
-            "module.adb-lakehouse-uc-metastore.azurerm_role_assignment.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_account.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.azurerm_route_table.this",
-            "module.adb-lakehouse.azurerm_subnet.private",
-            "module.adb-lakehouse.azurerm_virtual_network.this",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
-          ]
-        }
-      ]
-    },
-    {
-      "module": "module.adb-lakehouse",
-      "mode": "managed",
-      "type": "azurerm_subnet_route_table_association",
-      "name": "public",
-      "provider": "provider[\"registry.terraform.io/hashicorp/azurerm\"]",
-      "instances": [
-        {
-          "schema_version": 0,
-          "attributes": {
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/virtualNetworks/VNET-data-analytics-portfolio-project-dev/subnets/public-subnet-databricks-ws",
-            "route_table_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/routeTables/route-table-data-analytics-portfolio-project-dev",
-            "subnet_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/virtualNetworks/VNET-data-analytics-portfolio-project-dev/subnets/public-subnet-databricks-ws",
-            "timeouts": null
-          },
-          "sensitive_attributes": [],
-          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxODAwMDAwMDAwMDAwLCJkZWxldGUiOjE4MDAwMDAwMDAwMDAsInJlYWQiOjMwMDAwMDAwMDAwMH19",
-          "dependencies": [
-            "module.adb-lakehouse-uc-metastore.azurerm_databricks_access_connector.access_connector",
-            "module.adb-lakehouse-uc-metastore.azurerm_resource_group.metastore_resource_group",
-            "module.adb-lakehouse-uc-metastore.azurerm_role_assignment.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_account.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
-            "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.azurerm_route_table.this",
-            "module.adb-lakehouse.azurerm_subnet.public",
-            "module.adb-lakehouse.azurerm_virtual_network.this",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
+            "module.adb-lakehouse.azurerm_virtual_network.this"
           ]
         }
       ]
@@ -609,12 +453,71 @@
             "edge_zone": "",
             "encryption": [],
             "flow_timeout_in_minutes": 0,
-            "guid": "d3360fad-92b3-4a50-a692-e983a55e9195",
+            "guid": "7964c3b5-ec04-4998-9845-e2a09e051c5d",
             "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/virtualNetworks/VNET-data-analytics-portfolio-project-dev",
             "location": "australiasoutheast",
             "name": "VNET-data-analytics-portfolio-project-dev",
             "resource_group_name": "adb-lakehouse-rg",
-            "subnet": [],
+            "subnet": [
+              {
+                "address_prefixes": [
+                  "10.26.1.0/25"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [
+                  {
+                    "name": "databricks-public-subnet-delegation",
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          "Microsoft.Network/virtualNetworks/subnets/join/action",
+                          "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",
+                          "Microsoft.Network/virtualNetworks/subnets/unprepareNetworkPolicies/action"
+                        ],
+                        "name": "Microsoft.Databricks/workspaces"
+                      }
+                    ]
+                  }
+                ],
+                "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/virtualNetworks/VNET-data-analytics-portfolio-project-dev/subnets/public-subnet-databricks-ws",
+                "name": "public-subnet-databricks-ws",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/routeTables/route-table-data-analytics-portfolio-project-dev",
+                "security_group": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/networkSecurityGroups/databricks-nsg-data-analytics-portfolio-project-dev",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              },
+              {
+                "address_prefixes": [
+                  "10.26.1.128/25"
+                ],
+                "default_outbound_access_enabled": true,
+                "delegation": [
+                  {
+                    "name": "databricks-private-subnet-delegation",
+                    "service_delegation": [
+                      {
+                        "actions": [
+                          "Microsoft.Network/virtualNetworks/subnets/join/action",
+                          "Microsoft.Network/virtualNetworks/subnets/prepareNetworkPolicies/action",
+                          "Microsoft.Network/virtualNetworks/subnets/unprepareNetworkPolicies/action"
+                        ],
+                        "name": "Microsoft.Databricks/workspaces"
+                      }
+                    ]
+                  }
+                ],
+                "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/virtualNetworks/VNET-data-analytics-portfolio-project-dev/subnets/private-subnet-databricks-ws",
+                "name": "private-subnet-databricks-ws",
+                "private_endpoint_network_policies": "Disabled",
+                "private_link_service_network_policies_enabled": true,
+                "route_table_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/routeTables/route-table-data-analytics-portfolio-project-dev",
+                "security_group": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-lakehouse-rg/providers/Microsoft.Network/networkSecurityGroups/databricks-nsg-data-analytics-portfolio-project-dev",
+                "service_endpoint_policy_ids": [],
+                "service_endpoints": []
+              }
+            ],
             "tags": {
               "project name": "data project"
             },
@@ -630,7 +533,54 @@
             "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
             "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
             "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
-            "module.adb-lakehouse.data.azurerm_resource_group.this"
+            "module.adb-lakehouse.azurerm_resource_group.this"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "module.adb-lakehouse-data-objects",
+      "mode": "managed",
+      "type": "databricks_external_location",
+      "name": "silver-zone",
+      "provider": "provider[\"registry.terraform.io/databricks/databricks\"].workspace",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "access_point": null,
+            "comment": "silver Zone external storage az container",
+            "credential_name": "uc-metastore-access-connector",
+            "encryption_details": [],
+            "force_destroy": null,
+            "force_update": null,
+            "id": "silver-zone",
+            "isolation_mode": "ISOLATION_MODE_OPEN",
+            "metastore_id": "7648c22a-435c-47cf-bffc-5b5228a274ae",
+            "name": "silver-zone",
+            "owner": "gowri1234_outlook.co.nz#ext#@gowri1234outlookco.onmicrosoft.com",
+            "read_only": false,
+            "skip_validation": null,
+            "url": "abfss://silver@dlslakehouse0101010.dfs.core.windows.net/"
+          },
+          "sensitive_attributes": [],
+          "private": "bnVsbA==",
+          "dependencies": [
+            "module.adb-lakehouse-uc-metastore.azurerm_databricks_access_connector.access_connector",
+            "module.adb-lakehouse-uc-metastore.azurerm_resource_group.metastore_resource_group",
+            "module.adb-lakehouse-uc-metastore.azurerm_role_assignment.unity_catalog",
+            "module.adb-lakehouse-uc-metastore.azurerm_storage_account.unity_catalog",
+            "module.adb-lakehouse-uc-metastore.azurerm_storage_container.unity_catalog",
+            "module.adb-lakehouse-uc-metastore.databricks_metastore.databricks-metastore",
+            "module.adb-lakehouse-uc-metastore.databricks_metastore_data_access.access-connector-data-access",
+            "module.adb-lakehouse.azurerm_databricks_workspace.this",
+            "module.adb-lakehouse.azurerm_network_security_group.this",
+            "module.adb-lakehouse.azurerm_resource_group.this",
+            "module.adb-lakehouse.azurerm_subnet.private",
+            "module.adb-lakehouse.azurerm_subnet.public",
+            "module.adb-lakehouse.azurerm_subnet_network_security_group_association.private",
+            "module.adb-lakehouse.azurerm_subnet_network_security_group_association.public",
+            "module.adb-lakehouse.azurerm_virtual_network.this"
           ]
         }
       ]
@@ -649,7 +599,7 @@
             "identity": [
               {
                 "identity_ids": [],
-                "principal_id": "af6fbfea-0fdc-4e12-a96a-f79dfd424631",
+                "principal_id": "ca53e235-f62a-4588-ace0-7aa18811c0dd",
                 "tenant_id": "81835726-6e9e-4770-8bb6-6c292f2fef3d",
                 "type": "SystemAssigned"
               }
@@ -707,9 +657,9 @@
             "condition_version": "",
             "delegated_managed_identity_resource_id": "",
             "description": "",
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-uc-metastore-rg/providers/Microsoft.Storage/storageAccounts/ucmetastore0101010/providers/Microsoft.Authorization/roleAssignments/ec44a4a5-83a6-c4cc-0120-bc041d3cd9bb",
-            "name": "ec44a4a5-83a6-c4cc-0120-bc041d3cd9bb",
-            "principal_id": "af6fbfea-0fdc-4e12-a96a-f79dfd424631",
+            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-uc-metastore-rg/providers/Microsoft.Storage/storageAccounts/ucmetastore0101010/providers/Microsoft.Authorization/roleAssignments/beab851d-00b3-a16c-0f2f-a188272f9aa8",
+            "name": "beab851d-00b3-a16c-0f2f-a188272f9aa8",
+            "principal_id": "ca53e235-f62a-4588-ace0-7aa18811c0dd",
             "principal_type": "ServicePrincipal",
             "role_definition_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/providers/Microsoft.Authorization/roleDefinitions/428e0ff0-5e57-4d9c-a221-2c70d0e0a443",
             "role_definition_name": "EventGrid EventSubscription Contributor",
@@ -733,9 +683,9 @@
             "condition_version": "",
             "delegated_managed_identity_resource_id": "",
             "description": "",
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-uc-metastore-rg/providers/Microsoft.Storage/storageAccounts/ucmetastore0101010/providers/Microsoft.Authorization/roleAssignments/2d7dac70-b0dc-c3c6-e080-7383279d5201",
-            "name": "2d7dac70-b0dc-c3c6-e080-7383279d5201",
-            "principal_id": "af6fbfea-0fdc-4e12-a96a-f79dfd424631",
+            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-uc-metastore-rg/providers/Microsoft.Storage/storageAccounts/ucmetastore0101010/providers/Microsoft.Authorization/roleAssignments/22fc214e-cae6-d513-808c-dbce87e9cfd7",
+            "name": "22fc214e-cae6-d513-808c-dbce87e9cfd7",
+            "principal_id": "ca53e235-f62a-4588-ace0-7aa18811c0dd",
             "principal_type": "ServicePrincipal",
             "role_definition_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/providers/Microsoft.Authorization/roleDefinitions/ba92f5b4-2d11-453d-a403-e96b0029c9fe",
             "role_definition_name": "Storage Blob Data Contributor",
@@ -759,9 +709,9 @@
             "condition_version": "",
             "delegated_managed_identity_resource_id": "",
             "description": "",
-            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-uc-metastore-rg/providers/Microsoft.Storage/storageAccounts/ucmetastore0101010/providers/Microsoft.Authorization/roleAssignments/31661370-2746-0edf-a727-8187ad93d13a",
-            "name": "31661370-2746-0edf-a727-8187ad93d13a",
-            "principal_id": "af6fbfea-0fdc-4e12-a96a-f79dfd424631",
+            "id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-uc-metastore-rg/providers/Microsoft.Storage/storageAccounts/ucmetastore0101010/providers/Microsoft.Authorization/roleAssignments/20641274-27ab-2315-fe12-215754c1add7",
+            "name": "20641274-27ab-2315-fe12-215754c1add7",
+            "principal_id": "ca53e235-f62a-4588-ace0-7aa18811c0dd",
             "principal_type": "ServicePrincipal",
             "role_definition_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/providers/Microsoft.Authorization/roleDefinitions/974c5e8b-45b9-4653-ba55-5f855dd0fb88",
             "role_definition_name": "Storage Queue Data Contributor",
@@ -828,15 +778,15 @@
             "name": "ucmetastore0101010",
             "network_rules": [],
             "nfsv3_enabled": false,
-            "primary_access_key": "1ucb/+1MgBSQVeJmuH2I8NeSGAuY6iXoHmp7M2QHK2JqnHtXN/SBbGpvcNNaN9rVQ9RHgmkLy6Hl+AStJhx2hg==",
-            "primary_blob_connection_string": "DefaultEndpointsProtocol=https;BlobEndpoint=https://ucmetastore0101010.blob.core.windows.net/;AccountName=ucmetastore0101010;AccountKey=1ucb/+1MgBSQVeJmuH2I8NeSGAuY6iXoHmp7M2QHK2JqnHtXN/SBbGpvcNNaN9rVQ9RHgmkLy6Hl+AStJhx2hg==",
+            "primary_access_key": "VIAM6kpVn9J3ih+Jw1Vg+2qxwcT69fYur6ov4csxsYBN24BuuMfauthriClu6RsfOIqKcj6bXq8r+AStniIS7g==",
+            "primary_blob_connection_string": "DefaultEndpointsProtocol=https;BlobEndpoint=https://ucmetastore0101010.blob.core.windows.net/;AccountName=ucmetastore0101010;AccountKey=VIAM6kpVn9J3ih+Jw1Vg+2qxwcT69fYur6ov4csxsYBN24BuuMfauthriClu6RsfOIqKcj6bXq8r+AStniIS7g==",
             "primary_blob_endpoint": "https://ucmetastore0101010.blob.core.windows.net/",
             "primary_blob_host": "ucmetastore0101010.blob.core.windows.net",
             "primary_blob_internet_endpoint": "",
             "primary_blob_internet_host": "",
             "primary_blob_microsoft_endpoint": "",
             "primary_blob_microsoft_host": "",
-            "primary_connection_string": "DefaultEndpointsProtocol=https;AccountName=ucmetastore0101010;AccountKey=1ucb/+1MgBSQVeJmuH2I8NeSGAuY6iXoHmp7M2QHK2JqnHtXN/SBbGpvcNNaN9rVQ9RHgmkLy6Hl+AStJhx2hg==;EndpointSuffix=core.windows.net",
+            "primary_connection_string": "DefaultEndpointsProtocol=https;AccountName=ucmetastore0101010;AccountKey=VIAM6kpVn9J3ih+Jw1Vg+2qxwcT69fYur6ov4csxsYBN24BuuMfauthriClu6RsfOIqKcj6bXq8r+AStniIS7g==;EndpointSuffix=core.windows.net",
             "primary_dfs_endpoint": "https://ucmetastore0101010.dfs.core.windows.net/",
             "primary_dfs_host": "ucmetastore0101010.dfs.core.windows.net",
             "primary_dfs_internet_endpoint": "",
@@ -899,7 +849,7 @@
             "resource_group_name": "adb-uc-metastore-rg",
             "routing": [],
             "sas_policy": [],
-            "secondary_access_key": "LMmIiPgGRgR8K3hqNVehNwJlVG/Enb/yVMmC4UpUOFzJ2SI2En6/lHTIK7sKo5KYjIKHt786+KVp+AStLLIvQA==",
+            "secondary_access_key": "PBtT804aA7UZ5u6OdTvuLftxm5YW6+NQPNSJ6mVPf4xM9PvLEY745XpQbXxzF+hAkj9Ipy4pONMp+ASts6hqdw==",
             "secondary_blob_connection_string": "",
             "secondary_blob_endpoint": "",
             "secondary_blob_host": "",
@@ -907,7 +857,7 @@
             "secondary_blob_internet_host": "",
             "secondary_blob_microsoft_endpoint": "",
             "secondary_blob_microsoft_host": "",
-            "secondary_connection_string": "DefaultEndpointsProtocol=https;AccountName=ucmetastore0101010;AccountKey=LMmIiPgGRgR8K3hqNVehNwJlVG/Enb/yVMmC4UpUOFzJ2SI2En6/lHTIK7sKo5KYjIKHt786+KVp+AStLLIvQA==;EndpointSuffix=core.windows.net",
+            "secondary_connection_string": "DefaultEndpointsProtocol=https;AccountName=ucmetastore0101010;AccountKey=PBtT804aA7UZ5u6OdTvuLftxm5YW6+NQPNSJ6mVPf4xM9PvLEY745XpQbXxzF+hAkj9Ipy4pONMp+ASts6hqdw==;EndpointSuffix=core.windows.net",
             "secondary_dfs_endpoint": "",
             "secondary_dfs_host": "",
             "secondary_dfs_internet_endpoint": "",
@@ -965,13 +915,7 @@
             [
               {
                 "type": "get_attr",
-                "value": "secondary_connection_string"
-              }
-            ],
-            [
-              {
-                "type": "get_attr",
-                "value": "secondary_blob_connection_string"
+                "value": "primary_access_key"
               }
             ],
             [
@@ -983,13 +927,19 @@
             [
               {
                 "type": "get_attr",
-                "value": "primary_access_key"
+                "value": "secondary_access_key"
               }
             ],
             [
               {
                 "type": "get_attr",
-                "value": "secondary_access_key"
+                "value": "secondary_blob_connection_string"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "secondary_connection_string"
               }
             ]
           ],
@@ -1042,22 +992,22 @@
           "schema_version": 0,
           "attributes": {
             "cloud": "azure",
-            "created_at": 1728769956505,
+            "created_at": 1728943955392,
             "created_by": "gowri1234_outlook.co.nz#ext#@gowri1234outlookco.onmicrosoft.com",
             "default_data_access_config_id": null,
             "delta_sharing_organization_name": null,
             "delta_sharing_recipient_token_lifetime_in_seconds": 0,
             "delta_sharing_scope": "INTERNAL",
             "force_destroy": true,
-            "global_metastore_id": "azure:australiasoutheast:76a87391-98d6-44f3-a34b-0d3cfe9ffca2",
-            "id": "76a87391-98d6-44f3-a34b-0d3cfe9ffca2",
-            "metastore_id": "76a87391-98d6-44f3-a34b-0d3cfe9ffca2",
+            "global_metastore_id": "azure:australiasoutheast:7648c22a-435c-47cf-bffc-5b5228a274ae",
+            "id": "7648c22a-435c-47cf-bffc-5b5228a274ae",
+            "metastore_id": "7648c22a-435c-47cf-bffc-5b5228a274ae",
             "name": "uc-metastore",
             "owner": "gowri1234_outlook.co.nz#ext#@gowri1234outlookco.onmicrosoft.com",
             "region": "australiasoutheast",
-            "storage_root": "abfss://ucmetastore0101010-container@ucmetastore0101010.dfs.core.windows.net/76a87391-98d6-44f3-a34b-0d3cfe9ffca2",
+            "storage_root": "abfss://ucmetastore0101010-container@ucmetastore0101010.dfs.core.windows.net/7648c22a-435c-47cf-bffc-5b5228a274ae",
             "storage_root_credential_id": null,
-            "updated_at": 1728769963365,
+            "updated_at": 1728943960111,
             "updated_by": "gowri1234_outlook.co.nz#ext#@gowri1234outlookco.onmicrosoft.com"
           },
           "sensitive_attributes": [],
@@ -1084,7 +1034,7 @@
             "azure_managed_identity": [
               {
                 "access_connector_id": "/subscriptions/f5db8d12-ebce-4e7d-b62c-6e149c62749b/resourceGroups/adb-uc-metastore-rg/providers/Microsoft.Databricks/accessConnectors/uc-metastore-access-connector",
-                "credential_id": "60dc9efa-b8ed-4216-bb76-1a65173a3d32",
+                "credential_id": "5d735266-eea8-407a-8e2c-3ac0f2984258",
                 "managed_identity_id": ""
               }
             ],
@@ -1095,10 +1045,10 @@
             "force_destroy": true,
             "force_update": null,
             "gcp_service_account_key": [],
-            "id": "76a87391-98d6-44f3-a34b-0d3cfe9ffca2|uc-metastore-access-connector",
+            "id": "7648c22a-435c-47cf-bffc-5b5228a274ae|uc-metastore-access-connector",
             "is_default": true,
             "isolation_mode": "ISOLATION_MODE_OPEN",
-            "metastore_id": "76a87391-98d6-44f3-a34b-0d3cfe9ffca2",
+            "metastore_id": "7648c22a-435c-47cf-bffc-5b5228a274ae",
             "name": "uc-metastore-access-connector",
             "owner": "gowri1234_outlook.co.nz#ext#@gowri1234outlookco.onmicrosoft.com",
             "read_only": false,
