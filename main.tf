@@ -31,10 +31,36 @@ module "adb-lakehouse" {
   tags                                = var.tags
 }
 
+
+# Configure Databricks CLI - Databricks configure --token  --> This manual step requries databricks workspace URL and user token generated to access databricks API via CLI
+
+
+
 #this will assign uc to a specific workspace
 module "adb-ws-uc-assignment" {
   depends_on          = [ module.adb-lakehouse ]
   source              = "./modules/adb-ws-uc-assignment"
   workspace_id        = module.adb-lakehouse.workspace_id
   metastore_id        = module.adb-lakehouse-uc-metastore.metastore_id
+   providers = {
+    databricks = databricks.account
+  }
+}
+
+#this module will configure uc data objects including external storage locations, catalogs, schemas
+module "adb-lakehouse-data-objects" {
+  depends_on                     = [module.adb-lakehouse-uc-metastore]
+  source                         = "./modules/adb-uc-data-objects"
+  environment_name               = var.environment_name
+  lakehouse_external_storage_credential_name        = var.access_connector_name
+  metastore_id                   = module.adb-lakehouse-uc-metastore.metastore_id
+  access_connector_id            = module.adb-lakehouse-uc-metastore.access_connector_principal_id
+  lakehouse_external_location_name = var.storage_account_name
+  lakehouse_external_adls_path              = format("abfss://%s@%s.dfs.core.windows.net/",
+                                                          "landing",
+                                                        var.storage_account_name)
+  lakehouse_external_adls_rg                = var.adb_lakehouse_resource_group_name  
+  providers = {
+    databricks = databricks.workspace
+  }
 }

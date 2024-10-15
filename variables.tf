@@ -112,3 +112,33 @@ variable "workspace_id" {
   description = "The ID of Databricks workspace"
   default     = ""
 }
+
+variable "lakehouse_external_location_name" {
+  type        = string
+  description = "the name of the landing external location"
+  default = ""
+}
+
+variable "lakehouse_external_adls_path" {
+  type        = string
+  description = "The ADLS path of the landing zone"
+  default = ""
+}
+
+variable "lakehouse_external_adls_rg" {
+  type        = string
+  description = "The resource group name of the landing zone"
+  default = ""
+}
+
+variable "lakehouse_external_storage_credential_name" {
+  type        = string
+  description = "the name of the storage credential"
+  default = ""
+}
+
+variable "access_connector_id" {
+  type        = string
+  description = "the id of the access connector"
+  default = ""
+}
