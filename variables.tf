@@ -95,8 +95,80 @@ variable "public_subnet_address_prefixes" {
   description = "Address space for public Databricks subnet"
 }
 
-variable "storage_account_names" {
-  type        = list(string)
+variable "storage_account_name" {
+  type        = string
   description = "Names of additional storage accounts to create"
-  default     = []
+  default     = ""
+}
+
+variable "metastore_id" {
+  type        = string
+  description = "The ID of Unity Catalog metastore"
+  default     = ""
+}
+
+variable "workspace_id" {
+  type        = string
+  description = "The ID of Databricks workspace"
+  default     = ""
+}
+
+variable "lakehouse_ext_storage_acct_location_name" {
+  type        = string
+  description = "the name of the external location"
+  default = ""
+}
+
+variable "lakehouse_ext_storage_acct_adls_rg" {
+  type        = string
+  description = "The resource group name of the adls"
+  default = ""
+}
+
+variable "lakehouse_external_storage_credential_name" {
+  type        = string
+  description = "the name of the storage credential"
+  default = ""
+}
+
+variable "access_connector_id" {
+  type        = string
+  description = "the id of the access connector"
+  default = ""
+}
+
+variable "lakehouse_external_adls_path_landing" {
+  type        = string
+  description = "The ADLS path of the landing zone"
+  default = ""
+}
+
+variable "lakehouse_external_adls_path_bronze_zone" {
+  type        = string
+  description = "The ADLS path of the bronze zone"
+  default = ""
+} 
+
+variable "lakehouse_external_adls_path_silver_zone" {
+  type        = string
+  description = "The ADLS path of the silver zone"
+  default = ""
+} 
+
+variable "lakehouse_external_adls_path_gold_zone" {
+  type        = string
+  description = "The ADLS path of the gold zone"
+  default = ""
+}
+
+variable "MyGitPAT" {
+  type        = string
+  description = "My Git PAT"
+  default = ""
+}
+
+variable "MyGitRepoURL" {
+  type        = string
+  description = "MyGitRepoURL"
+  default = ""
 }
