@@ -1,4 +1,4 @@
-module "adb-lakehouse-uc-metastore" {
+module "adb-uc-metastore" {
   # With UC by default we need to explicitly create a UC metastore, otherwise it will be created automatically
   source                     = "./modules/adb-uc-metastore"
   metastore_storage_name     = var.metastore_storage_name
@@ -14,7 +14,7 @@ module "adb-lakehouse-uc-metastore" {
 
 #this will create lakehouse platform elements - databricks ws within vnet, azure storage objects, data factory instance and key vault
 module "adb-lakehouse" {
-  depends_on                          = [module.adb-lakehouse-uc-metastore]
+  depends_on                          = [module.adb-uc-metastore]
   source                              = "./modules/adb-lakehouse"
   project_name                        = var.project_name
   environment_name                    = var.environment_name
@@ -41,20 +41,20 @@ module "adb-ws-uc-assignment" {
   depends_on          = [ module.adb-lakehouse ]
   source              = "./modules/adb-ws-uc-assignment"
   workspace_id        = module.adb-lakehouse.workspace_id
-  metastore_id        = module.adb-lakehouse-uc-metastore.metastore_id
+  metastore_id        = module.adb-uc-metastore.metastore_id
    providers = {
     databricks = databricks.account
   }
 }
 
 #this module will configure uc data objects including external storage locations, catalogs, schemas
-module "adb-lakehouse-data-objects" {
-  depends_on                     = [module.adb-lakehouse-uc-metastore]
+module "adb-uc-data-objects" {
+  depends_on                     = [module.adb-uc-metastore]
   source                         = "./modules/adb-uc-data-objects"
   environment_name               = var.environment_name
-  metastore_id                   = module.adb-lakehouse-uc-metastore.metastore_id
+  metastore_id                   = module.adb-uc-metastore.metastore_id
   lakehouse_external_storage_credential_name        = var.access_connector_name
-  access_connector_id            = module.adb-lakehouse-uc-metastore.access_connector_principal_id
+  access_connector_id            = module.adb-uc-metastore.access_connector_principal_id
   lakehouse_ext_storage_acct_location_name = var.storage_account_name
   lakehouse_ext_storage_acct_adls_rg                = var.adb_lakehouse_resource_group_name  
   lakehouse_external_adls_path_landing_zone              = format("abfss://%s@%s.dfs.core.windows.net/",

@@ -1,5 +1,5 @@
 output "metastore_id" {
-  value = module.adb-lakehouse-uc-metastore.metastore_id
+  value = module.adb-uc-metastore.metastore_id
 }
 
 output "workspace_url" {
