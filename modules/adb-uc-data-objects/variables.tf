@@ -8,19 +8,14 @@ variable "environment_name" {
   description = "(Required) The name of the project environment associated with the infrastructure to be managed by Terraform"
 }
 
-variable "lakehouse_external_location_name" {
+variable "lakehouse_ext_storage_acct_location_name" {
   type        = string
-  description = "the name of the landing external location"
+  description = "the name of the external location"
 }
 
-variable "lakehouse_external_adls_path" {
+variable "lakehouse_ext_storage_acct_adls_rg" {
   type        = string
-  description = "The ADLS path of the landing zone"
-}
-
-variable "lakehouse_external_adls_rg" {
-  type        = string
-  description = "The resource group name of the landing zone"
+  description = "The resource group name of the adls"
 }
 
 variable "lakehouse_external_storage_credential_name" {
@@ -31,4 +26,24 @@ variable "lakehouse_external_storage_credential_name" {
 variable "access_connector_id" {
   type        = string
   description = "the id of the access connector"
+}
+
+variable "lakehouse_external_adls_path_landing_zone" {
+  type        = string
+  description = "The ADLS path of the landing zone"
+}
+
+variable "lakehouse_external_adls_path_bronze_zone" {
+  type        = string
+  description = "The ADLS path of the bronze zone"
+}
+
+variable "lakehouse_external_adls_path_silver_zone" {
+  type        = string
+  description = "The ADLS path of the silver zone"
+}
+
+variable "lakehouse_external_adls_path_gold_zone" {
+  type        = string
+  description = "The ADLS path of the gold zone"
 }

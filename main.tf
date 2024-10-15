@@ -52,15 +52,32 @@ module "adb-lakehouse-data-objects" {
   depends_on                     = [module.adb-lakehouse-uc-metastore]
   source                         = "./modules/adb-uc-data-objects"
   environment_name               = var.environment_name
-  lakehouse_external_storage_credential_name        = var.access_connector_name
   metastore_id                   = module.adb-lakehouse-uc-metastore.metastore_id
+  lakehouse_external_storage_credential_name        = var.access_connector_name
   access_connector_id            = module.adb-lakehouse-uc-metastore.access_connector_principal_id
-  lakehouse_external_location_name = var.storage_account_name
-  lakehouse_external_adls_path              = format("abfss://%s@%s.dfs.core.windows.net/",
+  lakehouse_ext_storage_acct_location_name = var.storage_account_name
+  lakehouse_ext_storage_acct_adls_rg                = var.adb_lakehouse_resource_group_name  
+  lakehouse_external_adls_path_landing_zone              = format("abfss://%s@%s.dfs.core.windows.net/",
                                                           "landing",
                                                         var.storage_account_name)
-  lakehouse_external_adls_rg                = var.adb_lakehouse_resource_group_name  
+  lakehouse_external_adls_path_bronze_zone              = format("abfss://%s@%s.dfs.core.windows.net/",
+                                                          "bronze",
+                                                        var.storage_account_name)
+  lakehouse_external_adls_path_silver_zone              = format("abfss://%s@%s.dfs.core.windows.net/",
+                                                        "silver",
+                                                      var.storage_account_name)
+  lakehouse_external_adls_path_gold_zone              = format("abfss://%s@%s.dfs.core.windows.net/",
+                                                        "gold",
+                                                      var.storage_account_name)                                                      
   providers = {
     databricks = databricks.workspace
   }
+}
+
+# configuring GIT creds and repo
+module "adb-git" {
+  depends_on = [ module.adb-lakehouse ]
+  source              = "./modules/adb-git"
+  MyGitPAT = var.MyGitPAT
+  MyGitRepoURL = var.MyGitRepoURL
 }

@@ -6,6 +6,7 @@ resource "azurerm_storage_account" "dls" {
   account_replication_type = "GRS"
   tags                     = var.tags
   is_hns_enabled           = true
+  depends_on = [ azurerm_databricks_workspace.this ]
 }
 
 resource "azurerm_storage_container" "landing" {

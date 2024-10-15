@@ -113,21 +113,15 @@ variable "workspace_id" {
   default     = ""
 }
 
-variable "lakehouse_external_location_name" {
+variable "lakehouse_ext_storage_acct_location_name" {
   type        = string
-  description = "the name of the landing external location"
+  description = "the name of the external location"
   default = ""
 }
 
-variable "lakehouse_external_adls_path" {
+variable "lakehouse_ext_storage_acct_adls_rg" {
   type        = string
-  description = "The ADLS path of the landing zone"
-  default = ""
-}
-
-variable "lakehouse_external_adls_rg" {
-  type        = string
-  description = "The resource group name of the landing zone"
+  description = "The resource group name of the adls"
   default = ""
 }
 
@@ -140,5 +134,41 @@ variable "lakehouse_external_storage_credential_name" {
 variable "access_connector_id" {
   type        = string
   description = "the id of the access connector"
+  default = ""
+}
+
+variable "lakehouse_external_adls_path_landing" {
+  type        = string
+  description = "The ADLS path of the landing zone"
+  default = ""
+}
+
+variable "lakehouse_external_adls_path_bronze_zone" {
+  type        = string
+  description = "The ADLS path of the bronze zone"
+  default = ""
+} 
+
+variable "lakehouse_external_adls_path_silver_zone" {
+  type        = string
+  description = "The ADLS path of the silver zone"
+  default = ""
+} 
+
+variable "lakehouse_external_adls_path_gold_zone" {
+  type        = string
+  description = "The ADLS path of the gold zone"
+  default = ""
+}
+
+variable "MyGitPAT" {
+  type        = string
+  description = "My Git PAT"
+  default = ""
+}
+
+variable "MyGitRepoURL" {
+  type        = string
+  description = "MyGitRepoURL"
   default = ""
 }
