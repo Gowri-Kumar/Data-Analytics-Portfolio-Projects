@@ -31,11 +31,6 @@ module "adb-lakehouse" {
   tags                                = var.tags
 }
 
-
-# Configure Databricks CLI - Databricks configure --token  --> This manual step requries databricks workspace URL and user token generated to access databricks API via CLI
-
-
-
 #this will assign uc to a specific workspace
 module "adb-ws-uc-assignment" {
   depends_on          = [ module.adb-lakehouse ]
@@ -74,10 +69,10 @@ module "adb-uc-data-objects" {
   }
 }
 
-# configuring GIT creds and repo
-module "adb-git" {
+# Databricks workspace configurations
+module "adb-ws-configs" {
   depends_on = [ module.adb-lakehouse ]
-  source              = "./modules/adb-git"
+  source              = "./modules/adb-ws-configs"
   MyGitPAT = var.MyGitPAT
   MyGitRepoURL = var.MyGitRepoURL
 }

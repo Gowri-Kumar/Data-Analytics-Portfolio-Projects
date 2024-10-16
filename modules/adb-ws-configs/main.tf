@@ -5,7 +5,6 @@ resource "databricks_git_credential" "MyGitCreds" {
   personal_access_token = var.MyGitPAT
 }
 
-
 # configure git repo
 resource "databricks_repo" "MyRepo" {
   url = var.MyGitRepoURL
