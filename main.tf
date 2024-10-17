@@ -42,9 +42,10 @@ module "adb-ws-uc-assignment" {
   }
 }
 
+
 #this module will configure uc data objects including external storage locations, catalogs, schemas
 module "adb-uc-data-objects" {
-  depends_on                     = [module.adb-uc-metastore]
+  depends_on                     = [module.adb-ws-uc-assignment]
   source                         = "./modules/adb-uc-data-objects"
   environment_name               = var.environment_name
   metastore_id                   = module.adb-uc-metastore.metastore_id
@@ -71,7 +72,7 @@ module "adb-uc-data-objects" {
 
 # Databricks workspace configurations
 module "adb-ws-configs" {
-  depends_on = [ module.adb-lakehouse ]
+  depends_on = [ module.adb-ws-uc-assignment ]
   source              = "./modules/adb-ws-configs"
   MyGitPAT = var.MyGitPAT
   MyGitRepoURL = var.MyGitRepoURL

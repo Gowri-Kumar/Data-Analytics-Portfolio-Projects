@@ -42,6 +42,7 @@ resource "databricks_external_location" "bronze-zone" {
   url             = var.lakehouse_external_adls_path_bronze_zone
   credential_name = var.lakehouse_external_storage_credential_name
   comment         = "Bronze Zone external storage az container"
+  depends_on = [ databricks_external_location.landing-zone ]
 }
 
 # configures uc catalog and schema objects for bronze zone az container
@@ -67,6 +68,7 @@ resource "databricks_external_location" "silver-zone" {
   url             = var.lakehouse_external_adls_path_silver_zone
   credential_name = var.lakehouse_external_storage_credential_name
   comment         = "silver Zone external storage az container"
+  depends_on = [ databricks_external_location.bronze-zone ]
 }
 
 # configures uc catalog and schema objects for silver zone az container
@@ -92,6 +94,7 @@ resource "databricks_external_location" "gold-zone" {
   url             = var.lakehouse_external_adls_path_gold_zone
   credential_name = var.lakehouse_external_storage_credential_name
   comment         = "gold Zone external storage az container"
+  depends_on = [ databricks_external_location.silver-zone ]
 }
 
 # configures uc catalog and schema objects for gold zone az container
