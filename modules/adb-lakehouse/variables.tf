@@ -66,3 +66,14 @@ variable "storage_account_name" {
   description = "Names of additional storage accounts to create"
   default     = ""
 }
+
+
+variable "MyGitHubAcctName" {
+  type        = string
+  description = "Names of additional storage accounts to create"
+}
+
+variable "MyGitHubRepoName" {
+  type        = string
+  description = "Names of additional storage accounts to create"
+}

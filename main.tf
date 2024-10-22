@@ -29,6 +29,8 @@ module "adb-lakehouse" {
   public_subnet_address_prefixes      = var.public_subnet_address_prefixes
   storage_account_name               = var.storage_account_name
   tags                                = var.tags
+  MyGitHubAcctName = var.MyGitHubAcctName
+  MyGitHubRepoName = var.MyGitHubRepoName
 }
 
 #this will assign uc to a specific workspace
@@ -69,6 +71,8 @@ module "adb-uc-data-objects" {
     databricks = databricks.workspace
   }
 }
+
+// configure databricks cli auth before running the below modules
 
 # Databricks workspace configurations
 module "adb-ws-configs" {

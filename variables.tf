@@ -172,3 +172,15 @@ variable "MyGitRepoURL" {
   description = "MyGitRepoURL"
   default = ""
 }
+
+variable "MyGitHubAcctName" {
+  type        = string
+  description = "Git hub account name"
+  default     = ""
+}
+
+variable "MyGitHubRepoName" {
+  type        = string
+  description = "Git hub repo name "
+  default     = ""
+}

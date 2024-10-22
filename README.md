@@ -7,6 +7,7 @@ PRE-REQUISITE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
             -> az login --use-device-code 
             -> https://microsoft.com/devicelogin
             -> az ad user list
+            -> or az login --scope 2ff814a6-3304-4ab8-85cb-cd0e6f879c1d/.default   -> Azure databricks service principal's applicaiton ID
 -> terraform init
 
 TF APPLY >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
