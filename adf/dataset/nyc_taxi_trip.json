@@ -1,16 +1,11 @@
 {
 	"name": "nyc_taxi_trip",
 	"properties": {
-		"linkedServiceName": {
-			"referenceName": "Nyc_gov_tlc_trip_data",
-			"type": "LinkedServiceReference"
-		},
 		"annotations": [],
 		"type": "Parquet",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": "yellow_tripdata_2023-05.parquet"
+				"type": "HttpServerLocation"
 			},
 			"compressionCodec": "snappy"
 		},
