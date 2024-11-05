@@ -74,10 +74,10 @@ module "adb-uc-data-objects" {
   }
 }
 
-# configuring GIT creds and repo
-module "adb-git" {
-  depends_on = [ module.adb-lakehouse ]
-  source              = "./modules/adb-git"
-  MyGitPAT = var.MyGitPAT
-  MyGitRepoURL = var.MyGitRepoURL
-}
+# # configuring GIT creds and repo
+# module "adb-git" {
+#   depends_on = [ module.adb-lakehouse ]
+#   source              = "./modules/adb-git"
+#   MyGitPAT = var.MyGitPAT
+#   MyGitRepoURL = var.MyGitRepoURL
+# }
