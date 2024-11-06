@@ -1,0 +1,107 @@
+{
+	"name": "reqresAPI_2_adls",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['id']"
+								},
+								"sink": {
+									"name": "id",
+									"type": "Int64"
+								}
+							},
+							{
+								"source": {
+									"path": "['email']"
+								},
+								"sink": {
+									"name": "email",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['first_name']"
+								},
+								"sink": {
+									"name": "first_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['last_name']"
+								},
+								"sink": {
+									"name": "last_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['avatar']"
+								},
+								"sink": {
+									"name": "avatar",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['data']"
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "reqresAPI_users",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "reqres_users_adls_csv",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"name": "reqresAPI_users",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "reqresAPI",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
