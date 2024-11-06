@@ -13,6 +13,7 @@ resource "azurerm_role_assignment" "ext_storage_cred" {
 
 # Configures external location for landing zone az container
 resource "databricks_external_location" "landing-zone" {
+  depends_on = [ data.azurerm_storage_account.ext_storage_acct ]
   name            = "landing-zone"
   url             = var.lakehouse_external_adls_path_landing_zone
   credential_name = var.lakehouse_external_storage_credential_name
@@ -38,6 +39,7 @@ resource "databricks_schema" "landing_schema" {
 
 # Configures external location for bronze zone az container
 resource "databricks_external_location" "bronze-zone" {
+  depends_on = [ data.azurerm_storage_account.ext_storage_acct ]
   name            = "bronze-zone"
   url             = var.lakehouse_external_adls_path_bronze_zone
   credential_name = var.lakehouse_external_storage_credential_name
@@ -63,6 +65,7 @@ resource "databricks_schema" "bronze_schema" {
 
 # Configures external location for silver zone az container
 resource "databricks_external_location" "silver-zone" {
+  depends_on = [ data.azurerm_storage_account.ext_storage_acct ]
   name            = "silver-zone"
   url             = var.lakehouse_external_adls_path_silver_zone
   credential_name = var.lakehouse_external_storage_credential_name
@@ -88,6 +91,7 @@ resource "databricks_schema" "silver_schema" {
 
 # Configures external location for gold zone az container
 resource "databricks_external_location" "gold-zone" {
+  depends_on = [ data.azurerm_storage_account.ext_storage_acct ]
   name            = "gold-zone"
   url             = var.lakehouse_external_adls_path_gold_zone
   credential_name = var.lakehouse_external_storage_credential_name
