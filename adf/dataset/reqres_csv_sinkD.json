@@ -1,9 +1,15 @@
 {
-	"name": "reqres_users_adls_csv",
+	"name": "reqres_csv_sinkD",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "adls",
 			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"OutDirDP": {
+				"type": "string",
+				"defaultValue": "Reqres"
+			}
 		},
 		"annotations": [],
 		"type": "DelimitedText",
