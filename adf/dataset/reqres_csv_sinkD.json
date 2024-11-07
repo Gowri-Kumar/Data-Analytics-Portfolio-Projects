@@ -7,8 +7,7 @@
 		},
 		"parameters": {
 			"OutDirDP": {
-				"type": "string",
-				"defaultValue": "\"reqres\""
+				"type": "string"
 			}
 		},
 		"annotations": [],
