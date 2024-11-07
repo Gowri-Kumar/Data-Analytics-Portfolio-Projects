@@ -1,0 +1,12 @@
+{
+	"name": "data-project-adf-instance-1234rd",
+	"properties": {
+		"globalParameters": {
+			"ReqresData": {
+				"type": "string",
+				"value": "Reqres Data"
+			}
+		}
+	},
+	"location": "australiasoutheast"
+}
