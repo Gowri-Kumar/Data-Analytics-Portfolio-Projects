@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy data in csv",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -97,10 +97,53 @@
 				"outputs": [
 					{
 						"referenceName": "reqres_csv_sinkD",
-						"type": "DatasetReference",
-						"parameters": {
-							"OutDirDP": "Reqres Data"
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "Copy data in parquet",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET",
+						"paginationRules": {
+							"supportRFC5988": "true"
 						}
+					},
+					"sink": {
+						"type": "ParquetSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "ParquetWriteSettings"
+						}
+					},
+					"enableStaging": false
+				},
+				"inputs": [
+					{
+						"referenceName": "reqres_api_sourceD",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "reqres_parquet_sinkD",
+						"type": "DatasetReference"
 					}
 				]
 			}
