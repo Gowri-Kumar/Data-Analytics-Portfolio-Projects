@@ -7,7 +7,8 @@
 		},
 		"parameters": {
 			"OutDirDP": {
-				"type": "string"
+				"type": "string",
+				"defaultValue": "\"reqres\""
 			}
 		},
 		"annotations": [],
@@ -15,6 +16,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
+				"folderPath": {
+					"value": "@dataset().OutDirDP",
+					"type": "Expression"
+				},
 				"fileSystem": "landing"
 			},
 			"columnDelimiter": ",",
