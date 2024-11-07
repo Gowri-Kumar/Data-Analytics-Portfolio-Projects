@@ -1,5 +1,5 @@
 {
-	"name": "reqresAPI_users",
+	"name": "reqres_api_sourceD",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "reqresAPI",

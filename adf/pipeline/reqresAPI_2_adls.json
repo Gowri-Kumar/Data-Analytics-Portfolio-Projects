@@ -90,13 +90,13 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "reqresAPI_users",
+						"referenceName": "reqres_api_sourceD",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "reqres_users_adls_csv",
+						"referenceName": "reqres_csv_sinkD",
 						"type": "DatasetReference"
 					}
 				]
