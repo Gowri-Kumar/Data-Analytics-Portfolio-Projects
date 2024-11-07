@@ -97,7 +97,13 @@
 				"outputs": [
 					{
 						"referenceName": "reqres_csv_sinkD",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ReqresData": {
+								"value": "@pipeline().globalParameters.ReqresData",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			},
@@ -143,7 +149,13 @@
 				"outputs": [
 					{
 						"referenceName": "reqres_parquet_sinkD",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"ReqresData": {
+								"value": "@pipeline().globalParameters.ReqresData",
+								"type": "Expression"
+							}
+						}
 					}
 				]
 			}

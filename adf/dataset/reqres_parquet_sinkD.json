@@ -6,7 +6,7 @@
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
-			"OutDirDP": {
+			"ReqresData": {
 				"type": "string"
 			}
 		},
@@ -16,7 +16,7 @@
 			"location": {
 				"type": "AzureBlobFSLocation",
 				"folderPath": {
-					"value": "@dataset().OutDirDP",
+					"value": "@dataset().ReqresData",
 					"type": "Expression"
 				},
 				"fileSystem": "landing"
