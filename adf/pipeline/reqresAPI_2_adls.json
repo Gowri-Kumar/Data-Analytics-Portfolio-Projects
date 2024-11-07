@@ -99,7 +99,7 @@
 						"referenceName": "reqres_csv_sinkD",
 						"type": "DatasetReference",
 						"parameters": {
-							"OutDirDP": "\"Reqres Data\""
+							"OutDirDP": "Reqres Data"
 						}
 					}
 				]
